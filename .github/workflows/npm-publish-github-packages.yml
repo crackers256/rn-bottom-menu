@@ -1,0 +1,32 @@
+name: Publish
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      id-token: write
+    steps:
+      - name: Set up Git
+        run: |
+          git config --global user.email "hardik.patel.081990@gmail.com"
+          git config --global user.name "Hardik Patel"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install
+        env:
+          NPM_TOKEN: ${{ secrets.AUTH_TOKEN }}
+      - run: npm run build
+      - run: npm run copy-dts    
+      - name: Publish npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+        run: npm publish --provenance --access public
