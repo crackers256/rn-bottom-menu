@@ -1,6 +1,6 @@
 {
   "name": "rn-bottom-menu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Native custom bottom menu",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
