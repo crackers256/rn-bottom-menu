@@ -6,7 +6,7 @@ A fast and intuitive bottom menu for React Native, designed for seamless navigat
 
 ---
 
-![bottom-menu-preview](https://raw.githubusercontent.com/crackers256/rn-bottom-menu/main/preview.gif?token=GHSAT0AAAAAAC5Q4GKDJ7ECP46RHJENGFGYZ4MRX6A)
+![bottom-menu-preview](./preview.gif)
 
 ## Features
 
